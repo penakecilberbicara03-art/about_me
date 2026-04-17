@@ -1,0 +1,109 @@
+:root {
+    --bg-dark: #0f172a;
+    --card-bg: rgba(30, 41, 59, 0.7);
+    --accent-cyan: #22d3ee;
+    --accent-purple: #818cf8;
+    --text-light: #f1f5f9;
+    --primary-gradient: linear-gradient(135deg, #22d3ee 0%, #818cf8 100%);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    background-image: 
+        radial-gradient(at 0% 0%, rgba(34, 211, 238, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(129, 140, 248, 0.15) 0px, transparent 50%);
+    min-height: 100vh;
+    padding: 50px 20px;
+}
+
+.container { max-width: 900px; margin: 0 auto; }
+
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    border: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 40px;
+    animation: fadeIn 1s ease-out;
+}
+
+.profile-frame {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 25px;
+    border-radius: 50%;
+    padding: 5px;
+    background: var(--primary-gradient);
+    position: relative;
+    box-shadow: 0 0 25px rgba(34, 211, 238, 0.4);
+}
+
+.profile-frame img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--bg-dark);
+}
+
+.hero h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.8rem;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tagline { color: var(--accent-cyan); margin-bottom: 15px; font-weight: 300; }
+
+.social-links { margin-bottom: 25px; }
+.social-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 0.85rem;
+    opacity: 0.6;
+    transition: 0.3s;
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 5px 12px;
+    border-radius: 8px;
+}
+
+.social-links a:hover { opacity: 1; border-color: var(--accent-cyan); color: var(--accent-cyan); }
+
+.btn-group { display: flex; justify-content: center; gap: 15px; }
+.btn-primary { background: var(--accent-cyan); color: var(--bg-dark); border: none; padding: 12px 28px; border-radius: 12px; font-weight: 600; cursor: pointer; transition: 0.3s; }
+.btn-outline { background: transparent; color: var(--accent-cyan); border: 1px solid var(--accent-cyan); padding: 12px 28px; border-radius: 12px; font-weight: 600; cursor: pointer; transition: 0.3s; }
+.btn-primary:hover, .btn-outline:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(34, 211, 238, 0.3); }
+
+.main-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+@media (max-width: 768px) { .main-grid { grid-template-columns: 1fr; } }
+
+.card { background: var(--card-bg); padding: 30px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); transition: 0.3s; }
+.card:hover { border-color: var(--accent-cyan); }
+.full-width { grid-column: 1 / -1; }
+
+h2 { font-family: 'Space Grotesk', sans-serif; color: var(--accent-cyan); margin-bottom: 20px; font-size: 1.3rem; }
+
+.timeline-item { border-left: 2px solid var(--accent-purple); padding-left: 20px; position: relative; }
+.timeline-item::before { content: ''; position: absolute; left: -7px; top: 0; width: 12px; height: 12px; background: var(--accent-purple); border-radius: 50%; }
+
+.skill-tag { display: inline-block; padding: 6px 14px; background: rgba(34, 211, 238, 0.1); border: 1px solid rgba(34, 211, 238, 0.3); color: var(--accent-cyan); border-radius: 50px; font-size: 0.8rem; margin: 4px; }
+
+.project-item { background: rgba(255,255,255,0.03); padding: 15px; border-radius: 15px; margin-bottom: 12px; cursor: pointer; border: 1px solid transparent; transition: 0.3s; }
+.project-item:hover { background: rgba(255,255,255,0.08); border-color: var(--accent-purple); }
+
+#preview-box { grid-column: 1 / -1; text-align: center; padding: 25px; background: rgba(129, 140, 248, 0.05); border-radius: 20px; min-height: 90px; display: flex; align-items: center; justify-content: center; border: 1px dashed rgba(255,255,255,0.1); }
+
+.text-bold { font-weight: 600; }
+.text-purple { color: var(--accent-purple); }
+.text-small { font-size: 0.85rem; }
+.text-dim { opacity: 0.6; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
